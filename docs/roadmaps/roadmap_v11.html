@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FinançasDuo Pro · Roadmap v11 · Marco 0 Concluído</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #f6f1e8;
+  --cream-soft: #faf5ec;
+  --cream-deep: #ede5d4;
+  --paper: #fffdf8;
+  --ink: #2a2420;
+  --ink-soft: #4a3f37;
+  --ink-mute: #7a6d63;
+  --ink-whisper: #b5a89b;
+  --terracotta: #c67b5c;
+  --terracotta-deep: #a55f42;
+  --terracotta-soft: #e5b8a4;
+  --sage: #6b8e6f;
+  --sage-deep: #4e6f54;
+  --sage-soft: #b8cfbb;
+  --mustard: #c89b3f;
+  --mustard-deep: #9e7525;
+  --mustard-soft: #e8d4a0;
+  --shadow-sm: 0 2px 8px -2px rgba(42, 36, 32, 0.08);
+  --shadow-md: 0 8px 24px -6px rgba(42, 36, 32, 0.12);
+  --shadow-lg: 0 20px 48px -12px rgba(42, 36, 32, 0.16);
+  --shadow-soft: 0 4px 20px rgba(198, 123, 92, 0.08);
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 24px;
+  --r-xl: 28px;
+  --r-hero: 36px;
+  --ease-organic: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --t-slow: 500ms var(--ease-organic);
+  --t-med: 400ms var(--ease-organic);
+  --t-fast: 300ms var(--ease-organic);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Manrope', -apple-system, sans-serif;
+  font-feature-settings: 'tnum' 1;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.65;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection { background: var(--terracotta-soft); color: var(--ink); }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 3rem 1.75rem; }
+
+.header {
+  text-align: center;
+  padding: 4rem 1.5rem 3rem;
+  position: relative;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 600px 300px at 30% 20%, rgba(198, 123, 92, 0.08), transparent 70%),
+    radial-gradient(ellipse 500px 250px at 70% 80%, rgba(107, 142, 111, 0.08), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.logo-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: var(--r-lg);
+  background: var(--ink);
+  color: var(--cream);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--terracotta-deep);
+  background: var(--cream-soft);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--terracotta-soft);
+}
+
+.kicker.celebrate {
+  color: var(--sage-deep);
+  background: rgba(184, 207, 187, 0.3);
+  border-color: var(--sage-soft);
+}
+
+h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+h1 em { font-style: italic; color: var(--terracotta-deep); font-weight: 300; }
+
+.header-lede {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--ink-soft);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  font-style: italic;
+}
+
+.header-links {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.header-link {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding: 0.6rem 1.1rem;
+  background: var(--paper);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--r-sm);
+  transition: all var(--t-med);
+  font-weight: 500;
+}
+
+.header-link:hover {
+  border-color: var(--terracotta);
+  color: var(--terracotta-deep);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+section { margin-bottom: 5rem; scroll-margin-top: 2rem; }
+
+.section-head { margin-bottom: 2.5rem; max-width: 780px; }
+
+.section-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.95rem;
+  color: var(--terracotta-deep);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.section-num.design { color: var(--sage-deep); }
+.section-num.new { color: var(--mustard-deep); }
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.75rem;
+}
+
+h2 em { font-style: italic; color: var(--terracotta-deep); font-weight: 300; }
+
+h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.section-lede {
+  font-size: 1.05rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+  max-width: 720px;
+}
+
+.section-lede em { font-family: 'Fraunces', serif; font-style: italic; color: var(--terracotta-deep); }
+
+/* Callout */
+.callout {
+  background: linear-gradient(135deg, var(--cream-soft), var(--cream));
+  border: 1px solid var(--sage-soft);
+  border-radius: var(--r-lg);
+  padding: 2rem 2.25rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.callout.primary {
+  border-color: var(--terracotta-soft);
+  background: linear-gradient(135deg, var(--cream), rgba(229, 184, 164, 0.15));
+}
+
+.callout.mustard {
+  border-color: var(--mustard-soft);
+  background: linear-gradient(135deg, var(--cream), rgba(232, 212, 160, 0.2));
+}
+
+.callout::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, var(--sage-soft), transparent 70%);
+  opacity: 0.25;
+  border-radius: 50%;
+}
+
+.callout.primary::before {
+  background: radial-gradient(circle, var(--terracotta-soft), transparent 70%);
+}
+
+.callout h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: var(--sage-deep);
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.callout.primary h4 { color: var(--terracotta-deep); }
+.callout.mustard h4 { color: var(--mustard-deep); }
+
+.callout p {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  position: relative;
+  line-height: 1.65;
+}
+
+.callout code {
+  font-family: ui-monospace, monospace;
+  background: var(--cream);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.82rem;
+  color: var(--terracotta-deep);
+}
+
+/* Status card */
+.status-card {
+  background: var(--paper);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--r-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2.5rem;
+}
+
+.status-label {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--terracotta-deep);
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.status-title {
+  font-family: 'Fraunces', serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 1.25rem;
+}
+
+.progress-bar {
+  background: var(--cream-deep);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin: 1rem 0 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--terracotta), var(--mustard));
+  border-radius: 999px;
+  transition: width var(--t-slow);
+}
+
+.progress-fill.design {
+  background: linear-gradient(90deg, var(--sage), var(--terracotta));
+}
+
+.progress-text {
+  font-size: 0.82rem;
+  color: var(--ink-mute);
+  margin-bottom: 0.25rem;
+}
+
+/* Phases */
+.phases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.phase {
+  background: var(--paper);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--r-lg);
+  padding: 1.75rem 2rem;
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 1.5rem;
+  align-items: start;
+  transition: all var(--t-med);
+  position: relative;
+}
+
+.phase:hover {
+  border-color: var(--terracotta-soft);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-soft);
+}
+
+.phase.done { background: linear-gradient(135deg, rgba(184, 207, 187, 0.15), var(--paper)); border-color: var(--sage-soft); }
+.phase.current { border-color: var(--terracotta); box-shadow: var(--shadow-soft); background: linear-gradient(135deg, rgba(229, 184, 164, 0.12), var(--paper)); }
+.phase.next { background: linear-gradient(135deg, rgba(232, 212, 160, 0.15), var(--paper)); border-color: var(--mustard-soft); }
+.phase.justdone {
+  background: linear-gradient(135deg, rgba(184, 207, 187, 0.3), rgba(229, 184, 164, 0.1));
+  border-color: var(--sage);
+  position: relative;
+}
+
+.phase.justdone::after {
+  content: "✨ HOJE";
+  position: absolute;
+  top: -10px;
+  right: 16px;
+  background: var(--sage-deep);
+  color: var(--cream);
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+}
+
+.phase-num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 1.5rem;
+  color: var(--ink-mute);
+  text-align: center;
+  padding-top: 0.25rem;
+}
+
+.phase.done .phase-num { color: var(--sage-deep); }
+.phase.justdone .phase-num { color: var(--sage-deep); }
+.phase.current .phase-num { color: var(--terracotta-deep); }
+.phase.next .phase-num { color: var(--mustard-deep); }
+
+.phase-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.phase-content p {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.phase-content .phase-detail {
+  margin-top: 0.85rem;
+  padding-top: 0.85rem;
+  border-top: 1px dashed var(--cream-deep);
+  font-size: 0.86rem;
+  color: var(--ink-mute);
+}
+
+.phase-status {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  white-space: nowrap;
+}
+
+.phase.done .phase-status { color: var(--sage-deep); font-weight: 500; }
+.phase.justdone .phase-status { color: var(--sage-deep); font-weight: 600; }
+.phase.current .phase-status { color: var(--terracotta-deep); font-weight: 500; }
+.phase.next .phase-status { color: var(--mustard-deep); font-weight: 500; }
+
+/* Tasks (sub-phase) */
+.tasks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.task {
+  background: var(--paper);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--r-md);
+  padding: 1.1rem 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  transition: all var(--t-fast);
+  position: relative;
+}
+
+.task strong {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.95rem;
+}
+
+.task.done {
+  background: linear-gradient(135deg, rgba(184, 207, 187, 0.12), var(--paper));
+  border-color: var(--sage-soft);
+  color: var(--ink-mute);
+}
+
+.task.done::before {
+  content: "✓";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  color: var(--sage-deep);
+  font-weight: 700;
+}
+
+.task.current {
+  border-color: var(--terracotta);
+  background: linear-gradient(135deg, rgba(229, 184, 164, 0.1), var(--paper));
+}
+
+.task.current::before {
+  content: "→";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  color: var(--terracotta-deep);
+  font-weight: 700;
+}
+
+.task.justdone {
+  border-color: var(--sage);
+  background: linear-gradient(135deg, rgba(184, 207, 187, 0.25), var(--paper));
+}
+
+.task.justdone::before {
+  content: "✨";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  font-size: 1rem;
+}
+
+.task.inprogress {
+  border-color: var(--mustard);
+  background: linear-gradient(135deg, rgba(232, 212, 160, 0.2), var(--paper));
+}
+
+.task.inprogress::before {
+  content: "◐";
+  position: absolute;
+  top: 1.1rem;
+  right: 1.25rem;
+  color: var(--mustard-deep);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 3rem 1.5rem 2rem;
+  border-top: 1px solid var(--cream-deep);
+  margin-top: 4rem;
+}
+
+.footer-mark {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--terracotta-deep);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-meta {
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+}
+
+.footer-meta strong { color: var(--ink-soft); font-weight: 600; }
+
+/* Hash line */
+.hash-line {
+  font-family: ui-monospace, monospace;
+  background: var(--cream-soft);
+  border: 1px solid var(--cream-deep);
+  border-radius: var(--r-sm);
+  padding: 0.85rem 1.15rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 1rem 0;
+  display: inline-block;
+}
+
+.hash-line strong { color: var(--terracotta-deep); }
+
+@media (max-width: 768px) {
+  .container { padding: 2rem 1.25rem; }
+  .phase { grid-template-columns: 1fr; gap: 0.75rem; }
+  .phase-num { text-align: left; padding-top: 0; }
+  .phase-status { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo-mark">FD</div>
+  <span class="kicker celebrate">✨ Marco 0 do Design Track concluído</span>
+  <h1>Roadmap <em>v11</em><br>FinançasDuo Pro</h1>
+  <p class="header-lede">A constituição visual está publicada. Hora de implementar os tokens.</p>
+  <div class="header-links">
+    <a href="https://github.com/aalbemd/financasduo" class="header-link" target="_blank">📚 GitHub</a>
+    <a href="https://financasduo.vercel.app" class="header-link" target="_blank">🌐 Site no ar</a>
+    <a href="https://github.com/aalbemd/financasduo/blob/main/design-principles.md" class="header-link" target="_blank">📄 design-principles.md</a>
+  </div>
+</header>
+
+<div class="container">
+
+<!-- ============================================ -->
+<!-- STATUS ATUAL                                  -->
+<!-- ============================================ -->
+<section>
+  <div class="status-card">
+    <div class="status-label">Status atual · 30/04/2026</div>
+    <div class="status-title">Semana 4 · Marco 0 concluído · CSS variáveis em andamento</div>
+
+    <div class="progress-text">Progresso geral do projeto · 36%</div>
+    <div class="progress-bar"><div class="progress-fill" style="width: 36%"></div></div>
+
+    <div class="progress-text" style="margin-top: 1rem">Design Track · 25% (Marco 0/4 concluído)</div>
+    <div class="progress-bar"><div class="progress-fill design" style="width: 25%"></div></div>
+
+    <div class="hash-line">
+      Último commit: <strong>513964f</strong> · docs: adiciona design-principles canonico (Marco 0)
+    </div>
+  </div>
+
+  <div class="callout primary">
+    <h4>🎉 O que foi conquistado hoje</h4>
+    <p>
+      <strong>Marco 0 do Design Track concluído!</strong> O arquivo <code>design-principles.md</code> está publicado no GitHub e contém a constituição visual completa do FinançasDuo Pro: paleta terrosa, Fraunces + Manrope, raios orgânicos (14–36px), sombras com tom de tinta, vocabulário relacional, padrões de componente e diretrizes para IA. <strong>289 linhas de identidade canônica.</strong>
+    </p>
+  </div>
+
+  <div class="callout mustard">
+    <h4>🎯 Próximo passo imediato (em andamento)</h4>
+    <p>
+      Aplicar os tokens do <code>design-principles.md</code> no projeto Next.js: instalar <strong>Fraunces + Manrope via next/font</strong> no <code>app/layout.tsx</code> e atualizar <code>app/globals.css</code> com todas as variáveis CSS (cores, raios, sombras, transições). Quando terminar, o site começa a respirar a identidade real.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- FASES PRINCIPAIS                              -->
+<!-- ============================================ -->
+<section>
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>Linha do tempo <em>geral</em></h2>
+    <p class="section-lede">As cinco fases do FinançasDuo Pro, do protótipo ao lançamento. Cada fase tem seu próprio ritmo de aprendizado.</p>
+  </div>
+
+  <div class="phases-list">
+    <div class="phase done">
+      <div class="phase-num">00</div>
+      <div class="phase-content">
+        <h3>Fase 0 · Protótipo dos 14 módulos</h3>
+        <p>Visual completo dos módulos principais: dashboard, lançamentos, sonhos, dívidas, investimentos, FinScore, etc.</p>
+      </div>
+      <div class="phase-status">Concluída</div>
+    </div>
+
+    <div class="phase current">
+      <div class="phase-num">01</div>
+      <div class="phase-content">
+        <h3>Fase 1 · MVP funcional <em>(em andamento)</em></h3>
+        <p>Auth, banco de dados real, primeiras telas conectadas, design system instalado, captura de dados básicos.</p>
+        <div class="phase-detail">
+          Semanas 1–8 · estamos na <strong>Semana 4</strong>, com Marco 0 do Design Track finalizado hoje.
+        </div>
+      </div>
+      <div class="phase-status">Em andamento</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">02</div>
+      <div class="phase-content">
+        <h3>Fase 2 · Módulos relacionais</h3>
+        <p>8 tipos de grupos, 6 perfis universais, multi-tenant funcional, LGPD básico, primeiros módulos integrados.</p>
+      </div>
+      <div class="phase-status">A seguir</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">03</div>
+      <div class="phase-content">
+        <h3>Fase 3 · Maturidade & dark mode</h3>
+        <p>System maturity, dark mode, performance, animações refinadas, microinterações, mobile polish.</p>
+      </div>
+      <div class="phase-status">Futuro</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">04</div>
+      <div class="phase-content">
+        <h3>Fase 4 · Mercado financeiro</h3>
+        <p>Integrações com APIs (BCB, Brapi, AwesomeAPI, CoinGecko), KPIs reais, gráficos avançados.</p>
+      </div>
+      <div class="phase-status">Futuro</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">05</div>
+      <div class="phase-content">
+        <h3>Fase 5 · FinScore + Admin Control</h3>
+        <p>Score relacional, painel admin, métricas de produto, monetização, lançamento.</p>
+      </div>
+      <div class="phase-status">Futuro</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- DESIGN TRACK                                  -->
+<!-- ============================================ -->
+<section>
+  <div class="section-head">
+    <span class="section-num design">02 · paralelo</span>
+    <h2>Design Track <em>(paralelo)</em></h2>
+    <p class="section-lede">Os quatro marcos visuais que tornam o FinançasDuo <em>visualmente diferenciado</em>. Roda em paralelo às fases técnicas.</p>
+  </div>
+
+  <div class="phases-list">
+    <div class="phase justdone">
+      <div class="phase-num">00</div>
+      <div class="phase-content">
+        <h3>Marco 0 · Ancorar tokens canônicos</h3>
+        <p>Documentar fontes, cores, espaços, raios e voz no <code style="font-family: ui-monospace, monospace; background: var(--cream); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.85rem; color: var(--terracotta-deep);">design-principles.md</code> — fonte canônica para humanos e IAs.</p>
+        <div class="phase-detail">
+          ✅ Arquivo publicado no GitHub · 289 linhas · commit <strong>513964f</strong> · 30/04/2026
+        </div>
+      </div>
+      <div class="phase-status">Concluído hoje</div>
+    </div>
+
+    <div class="phase current">
+      <div class="phase-num">01</div>
+      <div class="phase-content">
+        <h3>Marco 1 · Foundation no projeto <em>(em andamento)</em></h3>
+        <p>Aplicar os tokens no Next.js: <code style="font-family: ui-monospace, monospace; background: var(--cream); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.85rem; color: var(--terracotta-deep);">next/font</code> com Fraunces + Manrope, variáveis CSS no <code style="font-family: ui-monospace, monospace; background: var(--cream); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.85rem; color: var(--terracotta-deep);">globals.css</code>, refatoração das auth pages para o sistema canônico.</p>
+        <div class="phase-detail">
+          Semanas 5–6 · começamos hoje (em fim de sessão) e continuamos na próxima conversa.
+        </div>
+      </div>
+      <div class="phase-status">Em andamento</div>
+    </div>
+
+    <div class="phase next">
+      <div class="phase-num">02</div>
+      <div class="phase-content">
+        <h3>Marco 2 · Design system <code style="font-family: ui-monospace, monospace; background: var(--cream); padding: 0.1rem 0.35rem; border-radius: 4px; font-size: 0.85rem; color: var(--mustard-deep);">tokens.ts</code></h3>
+        <p>Sistema de design completo em TypeScript: tokens tipados, componentes Button, Input, Card, Modal, Badge, todos consumindo o design-principles.</p>
+      </div>
+      <div class="phase-status">Fase 2</div>
+    </div>
+
+    <div class="phase">
+      <div class="phase-num">03</div>
+      <div class="phase-content">
+        <h3>Marco 3 · System maturity + dark mode</h3>
+        <p>Refinamento, animações orgânicas, dark mode terroso (não preto puro), microinterações, acessibilidade AAA.</p>
+      </div>
+      <div class="phase-status">Fase 3</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- DETALHE DA SEMANA ATUAL                       -->
+<!-- ============================================ -->
+<section>
+  <div class="section-head">
+    <span class="section-num">03 · zoom</span>
+    <h2>Semana 4 <em>em detalhes</em></h2>
+    <p class="section-lede">As 9 tarefas da semana atual. <em>Tarefa 1 concluída na sessão anterior, Marco 0 do Design Track concluído hoje, Marco 1 começando.</em></p>
+  </div>
+
+  <div class="tasks">
+    <div class="task done">
+      <strong>1 · Rotação chaves Supabase</strong>
+      Migração para sistema publishable/secret, sem prefixo NEXT_PUBLIC. Production confirmado.
+    </div>
+
+    <div class="task justdone">
+      <strong>Marco 0 · design-principles.md</strong>
+      Constituição visual publicada no GitHub. 289 linhas. Cores, fontes, vozes, padrões e diretrizes IA.
+    </div>
+
+    <div class="task inprogress">
+      <strong>Marco 1.A · next/font + globals.css</strong>
+      Instalar Fraunces e Manrope via next/font; variáveis CSS canônicas no globals.css. Próximo na fila.
+    </div>
+
+    <div class="task current">
+      <strong>2 · Captura de nome</strong>
+      Primeira tela prototipada com Claude Design + Claude Code. "Como vocês gostariam de ser chamados?"
+    </div>
+
+    <div class="task">
+      <strong>3 · Formulário de transação</strong>
+      Registrar gasto/receita com validação relacional. Acolhedor, não burocrático.
+    </div>
+
+    <div class="task">
+      <strong>4 · Listagem de transações</strong>
+      Histórico com filtros, busca, agrupamento por data e categoria.
+    </div>
+
+    <div class="task">
+      <strong>5 · KPIs reais no dashboard</strong>
+      Substituir mocks por dados Supabase. Saldo, gastos do mês, evolução.
+    </div>
+
+    <div class="task">
+      <strong>6 · Realtime</strong>
+      Sincronização entre dispositivos. Quando ela registra um gasto, ele vê na hora.
+    </div>
+
+    <div class="task">
+      <strong>7 · Mobile polish</strong>
+      Responsive completo, touch targets 44×44px, gestures naturais.
+    </div>
+
+    <div class="task">
+      <strong>8 · PWA</strong>
+      Instalável no celular, ícone, splash screen, modo offline básico.
+    </div>
+
+    <div class="task">
+      <strong>9 · Dark mode (preview)</strong>
+      Primeira versão do dark mode terroso. Refinamento real só na Fase 3.
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- BRIEFING DE RETOMADA                          -->
+<!-- ============================================ -->
+<section>
+  <div class="section-head">
+    <span class="section-num new">04 · novo</span>
+    <h2>Briefing de <em>retomada</em></h2>
+    <p class="section-lede">Quando esta conversa ficar longa demais, copie o briefing abaixo para uma nova conversa e o Claude continua exatamente daqui.</p>
+  </div>
+
+  <div class="callout primary">
+    <h4>📋 Como usar este briefing</h4>
+    <p>
+      Quando perceber que a conversa está pesada/lenta, abra uma <strong>nova conversa</strong> com o Claude, anexe este Roadmap v11 e cole o briefing pronto que está no arquivo <code>briefing-retomada.md</code>. Você não perde uma vírgula do contexto.
+    </p>
+  </div>
+</section>
+
+</div>
+
+<footer class="footer">
+  <div class="footer-mark">FinançasDuo Pro</div>
+  <p class="footer-meta">
+    Roadmap <strong>v11</strong> · Marco 0 do Design Track concluído · 30/04/2026<br>
+    Construído com identidade própria · Fraunces + Manrope · paleta terrosa
+  </p>
+</footer>
+
+</body>
+</html>
